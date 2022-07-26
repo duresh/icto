@@ -65,9 +65,6 @@
 </head>
 
 <body>
-    @include('layouts.includes.header')
-
-
 
     <main class="container-fluid p-0">
 

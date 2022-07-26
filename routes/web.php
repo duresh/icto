@@ -37,7 +37,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      */
 
     Route::get('/', 'HomeController@index')->name('home.index');
-    Route::get('/skills', 'HomeController@skills')->name('home.skils');
+    Route::get('/skills', 'HomeController@skills')->name('home.skills');
     Route::get('/services', 'HomeController@services')->name('home.services');
     Route::get('/projects', 'HomeController@projects')->name('home.projects');
     Route::get('/team', 'HomeController@team')->name('home.team');

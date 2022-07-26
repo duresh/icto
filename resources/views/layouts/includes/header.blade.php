@@ -28,7 +28,7 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
-        <li><a href="{{ '/dashboard' }}" class="nav-link px-2 text-secondary">Dashboard</a></li>
+        <li><a href="{{ route('home.dashboard') }}" class="nav-link px-2 text-secondary">Dashboard</a></li>
 
         <li><a href="#" class="nav-link px-2 text-white">Users</a></li>
 
@@ -58,17 +58,17 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
-        <li><a href="{{ '/' }}" class="nav-link px-2 text-secondary">Home</a></li>
+        <li><a href="{{ route('home.index') }}" class="nav-link px-2 text-secondary">Home</a></li>
 
-        <li><a href="{{ '/skills' }}" class="nav-link px-2 text-white">Skills</a></li>
+        <li><a href="{{ route('home.skills') }}" class="nav-link px-2 text-white">Skills</a></li>
 
-        <li><a href="{{ '/services' }}" class="nav-link px-2 text-white">Services</a></li>
+        <li><a href="{{ route('home.services') }}" class="nav-link px-2 text-white">Services</a></li>
 
-        <li><a href="{{ '/projects' }}" class="nav-link px-2 text-white">Projects</a></li>
+        <li><a href="{{ route('home.projects') }}" class="nav-link px-2 text-white">Projects</a></li>
 
-        <li><a href="{{ '/team' }}" class="nav-link px-2 text-white">Team</a></li>
+        <li><a href="{{ route('home.team') }}" class="nav-link px-2 text-white">Team</a></li>
 
-        <li><a href="{{ '/contact' }}" class="nav-link px-2 text-white">Contact</a></li>
+        <li><a href="{{ route('home.contact') }}" class="nav-link px-2 text-white">Contact</a></li>
 
       </ul>
 
