@@ -19,5 +19,6 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/sidenav.css') }}" rel="stylesheet"> --}}
 
     @stack('css')

@@ -69,7 +69,7 @@
 
 
 
-    <main class="container-fluid">
+    <main class="container-fluid p-0">
 
         @yield('content')
 

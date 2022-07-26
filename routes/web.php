@@ -42,6 +42,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/projects', 'HomeController@projects')->name('home.projects');
     Route::get('/team', 'HomeController@team')->name('home.team');
     Route::get('/contact', 'HomeController@contact')->name('home.contact');
+    Route::get('/dashboard', 'HomeController@dashboard')->name('home.dashboard');
 
 
 

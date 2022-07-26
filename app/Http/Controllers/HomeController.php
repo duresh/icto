@@ -43,6 +43,11 @@ class HomeController extends Controller
         return view('home.contact');
     }
 
+    public function dashboard()
+    {
+        return view('dashboard.contents.dashboard');
+    }
+
 
 
 }
