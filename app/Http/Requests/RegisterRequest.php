@@ -48,6 +48,8 @@ class RegisterRequest extends FormRequest
 
             'email' => 'required|email:rfc,dns|unique:users,email',
 
+            'name' => 'required|min:3',
+
             'username' => 'required|unique:users,username',
 
             'password' => 'required|min:8',

@@ -14,15 +14,7 @@
 
     <meta name="generator" content="Hugo 0.87.0">
 
-    <title>Laravel 9 - My Blog</title>
-
-
-
-    <!-- Bootstrap core CSS -->
-
-
-
-
+    <title>ICTO</title>
 
     <style>
 
@@ -39,9 +31,6 @@
         user-select: none;
 
       }
-
-
-
       @media (min-width: 768px) {
 
         .bd-placeholder-img-lg {
@@ -54,13 +43,10 @@
 
     </style>
 
-
-
-
-
     <!-- Custom styles for this template -->
 
     @include('layouts.header')
+    @include('layouts.includes.header')
 
 </head>
 

@@ -72,7 +72,8 @@ class LoginController extends Controller
 
 
 
-        return $this->authenticated($request, $user);
+        // return $this->authenticated($request, $user);
+        return redirect('/dashboard')->with('success', "Login Successfull.");
 
     }
 

@@ -59,7 +59,7 @@ class RegisterController extends Controller
 
 
 
-        return redirect('/')->with('success', "Account successfully registered.");
+        return redirect('/dashboard')->with('success', "Account successfully registered.");
 
     }
 }

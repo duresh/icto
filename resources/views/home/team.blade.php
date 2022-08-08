@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
    <!-- Team Start -->
     <div class="container-xxl py-3" id="team">

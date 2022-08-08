@@ -1,14 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
+use App\Models\Profile;
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Auth;
 
 
 class HomeController extends Controller
 
 {
+
+    protected $image;
+
+    public function __construct()
+    {
+        $this->image = new Profile();
+    }
 
     public function index()
 
@@ -45,7 +52,18 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard.contents.dashboard');
+        $response['load'] = $this->image->all();
+        return view('dashboard.contents.dashboard')->with($response);
+    }
+
+    public function chart()
+    {
+        return view('dashboard.contents.chart');
+    }
+
+    public function pay()
+    {
+        return view('dashboard.contents.pay');
     }
 
 

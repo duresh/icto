@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
  <!-- Contact Start -->
     <div class="container-xxl" id="contact">

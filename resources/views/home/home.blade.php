@@ -1,21 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-
-        @auth
+@auth
 
         <meta http-equiv="refresh" content="0; URL={{ route('home.dashboard') }}" />
 
-
         @endauth
 
-
-
         @guest
+        
 <div class="bg-light rounded">
-  @include('layouts.includes.header')
 <!-- About Start -->
     <div class="container-xxl p-3" id="about">
         <div class="container">
