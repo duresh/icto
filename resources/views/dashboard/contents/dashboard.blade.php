@@ -12,6 +12,7 @@
 
 <div class="row m-t-25">
     <div class="col-sm-6 col-lg-3">
+        <a href="{{ route('home.members') }}">
         <div class="overview-item overview-item--c1">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
@@ -19,13 +20,14 @@
                         <i class="zmdi zmdi-account-o"></i>
                     </div>
                     <div class="text">
-                        <h2>10368</h2>
-                        <span>members online</span>
+                        <h2>{{ $count; }}</h2>
+                        <span>members registered</span>
                     </div>
                 </div>
 
             </div>
         </div>
+        </a>
     </div>
     <div class="col-sm-6 col-lg-3">
         <div class="overview-item overview-item--c2">
@@ -35,7 +37,7 @@
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
                     <div class="text">
-                        <h2>388,688</h2>
+                        <h2>{{ $fuser->contact; }}</h2>
                         <span>items solid</span>
                     </div>
                 </div>
@@ -76,9 +78,7 @@
         </div>
     </div>
    <div>
-        @foreach($load as $value)
-           <img src="{{ asset('storage/images/'.$value->name)  }}" alt="">
-        @endforeach
+
     </div>
 </div>
 

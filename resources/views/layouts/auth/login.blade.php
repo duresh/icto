@@ -32,7 +32,10 @@
             @endif
 
         </div>
-
+        <div class="form-group mb-3">
+            <input type="checkbox" name="remember" id="remember" value="1">
+            <label for="remember">Remember me</label>
+        </div>
 
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>

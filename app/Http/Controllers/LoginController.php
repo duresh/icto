@@ -68,11 +68,11 @@ class LoginController extends Controller
 
 
 
-        Auth::login($user);
+        Auth::login($user, $request->get('remember'));
 
 
 
-        // return $this->authenticated($request, $user);
+        $this->authenticated($request, $user);
         return redirect('/dashboard')->with('success', "Login Successfull.");
 
     }

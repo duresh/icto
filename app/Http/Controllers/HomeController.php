@@ -1,20 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Profile;
-// use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Foundation\Auth\User;
 // use Illuminate\Support\Facades\Auth;
+use App\Models\Profile;
+
 
 
 class HomeController extends Controller
 
 {
 
-    protected $image;
+    protected $user;
 
     public function __construct()
     {
-        $this->image = new Profile();
+        $this->user = new User();
     }
 
     public function index()
@@ -52,8 +54,9 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $response['load'] = $this->image->all();
-        return view('dashboard.contents.dashboard')->with($response);
+        $countMembers['count'] = User::count();
+        $findUser['fuser'] = Profile::find(1,['contact']);
+        return view('dashboard.contents.dashboard')->with($countMembers)->with($findUser);
     }
 
     public function chart()
@@ -64,6 +67,11 @@ class HomeController extends Controller
     public function pay()
     {
         return view('dashboard.contents.pay');
+    }
+    public function members()
+    {
+        $request['users'] = $this->user->all();
+        return view('dashboard.contents.member')->with($request);
     }
 
 

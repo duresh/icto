@@ -46,6 +46,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/dashboard', 'HomeController@dashboard')->name('home.dashboard');
     Route::get('/chart', 'HomeController@chart')->name('home.chart');
     Route::get('/pay', 'HomeController@pay')->name('home.pay');
+    Route::get('/members', 'HomeController@members')->name('home.members');
     Route::get('/udate-profile','UpdateProfileController@index')->name('update.load');
     Route::post('/save-profile','UpdateProfileController@save_profile')->name('update.save_profile');
 
