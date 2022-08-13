@@ -6,7 +6,7 @@ use App\Models\Pay;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\User;
 // use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\collection;
 
 
 
@@ -70,17 +70,18 @@ class HomeController extends Controller
 
     public function chart()
     {
-        // $chartData = Pay::where('status','1')->pluck('amount','created_at')->all();
-        $chartData = Pay::where('status','1');
+        $chartData = Pay::where('status','1')->pluck('amount','id');
+        // $chartData = Pay::where('status','1');
         // $amount = $chartData->select('amount','created_at');
-        $pluckedAmount = $chartData->pluck('amount');
-        $pluckedDate = $chartData->pluck('created_at');
-        $amm = $pluckedAmount->all();
-        $datepl = $pluckedDate->all();
+        // $pluckedAmount = $chartData->pluck('amount','id');
+            $amm = $chartData->keys();
+            $pdate= $chartData->values();
 
 
 
-        return view('dashboard.contents.chart',compact('pluckedAmount','pluckedDate'));
+        return view('dashboard.contents.chart',compact('amm','pdate'));
+
+
     }
 
     public function pay()
