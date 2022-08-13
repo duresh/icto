@@ -135,12 +135,12 @@
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                            <a href="{{ route('payment.records') }}">
+                                <i class="fas fa-table"></i>Payment Records</a>
                         </li>
                         <li>
                             <a href="{{ route('home.pay')}}">
-                                <i class="far fa-check-square"></i>Forms</a>
+                                <i class="far fa-check-square"></i>Pay Invoice</a>
                         </li>
                         <li>
                             <a href="calendar.html">
@@ -420,6 +420,15 @@
 
             $('#members-table').DataTable();
             });
+
+            $('#confirm').click(function(){
+            // $('#alert').removeClass('d-none');
+            setTimeout(() => {
+                $('#confirm-status').alert('close');
+            }, 2000);
+            });
+
+           
         </script>
     @endauth
 

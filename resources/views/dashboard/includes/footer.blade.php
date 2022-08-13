@@ -19,6 +19,7 @@
     <script src="{{ asset('admin/vendor/select2/select2.min.js') }}">
     </script>
     <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/chart.min.js') }}"></script>
 
     <!-- Main JS-->
     <script src="{{ asset('admin/js/main.js') }}"></script>

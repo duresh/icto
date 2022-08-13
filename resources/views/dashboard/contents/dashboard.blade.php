@@ -29,23 +29,26 @@
         </div>
         </a>
     </div>
-    <div class="col-sm-6 col-lg-3">
+   <div class="col-sm-6 col-lg-3">
+        <a href="{{ route('home.paidCustomers') }}">
         <div class="overview-item overview-item--c2">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
                     <div class="icon">
-                        <i class="zmdi zmdi-shopping-cart"></i>
+                        <i class="zmdi zmdi-money-box"></i>
                     </div>
                     <div class="text">
-                        <h2>{{ $fuser->contact; }}</h2>
-                        <span>items solid</span>
+                        <h2>{{ $fuser; }}</h2>
+                        <span>customers payed</span>
                     </div>
                 </div>
 
             </div>
         </div>
+        </a>
     </div>
     <div class="col-sm-6 col-lg-3">
+        <a href="{{ route('home.pendingCustomers') }}">
         <div class="overview-item overview-item--c3">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
@@ -53,13 +56,14 @@
                         <i class="zmdi zmdi-account-box-mail"></i>
                     </div>
                     <div class="text">
-                        <h2>388,688</h2>
-                        <span>items solid</span>
+                        <h2>{{ $puser }}</h2>
+                        <span>Pending Customers</span>
                     </div>
                 </div>
 
             </div>
         </div>
+    </a>
     </div>
     <div class="col-sm-6 col-lg-3">
         <div class="overview-item overview-item--c4">

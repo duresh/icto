@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Pay;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\User;
 // use Illuminate\Support\Facades\Auth;
-use App\Models\Profile;
+
 
 
 
@@ -54,14 +56,31 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $countMembers['count'] = User::count();
-        $findUser['fuser'] = Profile::find(1,['contact']);
-        return view('dashboard.contents.dashboard')->with($countMembers)->with($findUser);
+        // $countMembers['count'] = User::count();
+        // $findUser['fuser'] = Pay::count('status');
+        $count = User::count();
+        $finduser = Pay::all();
+        $completed = $finduser->where('status', '1');
+        $pending = $finduser->where('status', '0');
+        $puser = $pending->count();
+        $fuser = $completed->count();
+
+        return view('dashboard.contents.dashboard',compact('count','fuser','puser'));
     }
 
     public function chart()
     {
-        return view('dashboard.contents.chart');
+        // $chartData = Pay::where('status','1')->pluck('amount','created_at')->all();
+        $chartData = Pay::where('status','1');
+        // $amount = $chartData->select('amount','created_at');
+        $pluckedAmount = $chartData->pluck('amount');
+        $pluckedDate = $chartData->pluck('created_at');
+        $amm = $pluckedAmount->all();
+        $datepl = $pluckedDate->all();
+
+
+
+        return view('dashboard.contents.chart',compact('pluckedAmount','pluckedDate'));
     }
 
     public function pay()
@@ -72,6 +91,22 @@ class HomeController extends Controller
     {
         $request['users'] = $this->user->all();
         return view('dashboard.contents.member')->with($request);
+    }
+
+    public function paidCustomers()
+    {
+        $finduser = Pay::all();
+        $completed = $finduser->where('status', '1');
+        $total = $completed->sum('amount');
+        return view('dashboard.contents.pcustomer',compact('completed','total'));
+    }
+
+    public function pendingCustomers()
+    {
+        $finduser = Pay::all();
+        $completed = $finduser->where('status', '0');
+        $totalP = $completed->sum('amount');
+        return view('dashboard.contents.rcustomer',compact('completed','totalP'));
     }
 
 

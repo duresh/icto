@@ -47,8 +47,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/chart', 'HomeController@chart')->name('home.chart');
     Route::get('/pay', 'HomeController@pay')->name('home.pay');
     Route::get('/members', 'HomeController@members')->name('home.members');
+    Route::get('/paid-customers', 'HomeController@paidCustomers')->name('home.paidCustomers');
+    Route::get('/pending-customers', 'HomeController@pendingCustomers')->name('home.pendingCustomers');
     Route::get('/udate-profile','UpdateProfileController@index')->name('update.load');
     Route::post('/save-profile','UpdateProfileController@save_profile')->name('update.save_profile');
+    Route::post('/save-payment','PaymentController@save_payment')->name('payment.save_payment');
+    Route::get('/pay-records','PaymentController@payRecords')->name('payment.records');
+    Route::get('/{confirm_id}/confirm','PaymentController@confirm')->name('payment.confirm');
+
 
 
 
