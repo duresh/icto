@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\UpdateProfileController;
 
 
@@ -54,6 +55,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('/save-payment','PaymentController@save_payment')->name('payment.save_payment');
     Route::get('/pay-records','PaymentController@payRecords')->name('payment.records');
     Route::get('/{confirm_id}/confirm','PaymentController@confirm')->name('payment.confirm');
+    Route::get('stock/add','StockController@create')->name('stock.create');
+    Route::post('stock/add','StockController@store')->name('stock.store');
+    Route::get('stocks','StockController@index')->name('stock.index');
+    Route::get('stock/chart','StockController@chart')->name('stock.chart');
 
 
 

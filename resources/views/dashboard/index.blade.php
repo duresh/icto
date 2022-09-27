@@ -143,12 +143,12 @@
                                 <i class="far fa-check-square"></i>Pay Invoice</a>
                         </li>
                         <li>
-                            <a href="">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            <a href="{{ route('stock.create') }}">
+                                <i class="fas fa-calendar-alt"></i>Add Stock</a>
                         </li>
                         <li>
-                            <a href="">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                            <a href="{{ route('stock.index') }}">
+                                <i class="fas fa-map-marker-alt"></i>view Stock</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -430,6 +430,7 @@
 
 
         </script>
+        
     @endauth
 
     @guest
